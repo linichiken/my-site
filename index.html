@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Lin | UI/UX Designer & Web PM</title>
+    
+    <!-- SEO & SMO Meta Tags -->
+    <meta name="description" content="Hello，我是林逸賢 James。擁有 20 年以上經驗的 UI/UX 設計師與網站專案經理。專注於以人為本的數位體驗，提供網站企劃、前後台規劃與專案管理服務。">
+    <meta name="keywords" content="James Lin, 林逸賢, UI/UX 設計師, 網站專案經理, Web PM, 網頁設計, 專案管理, 視覺傳達設計, 數位轉型, SEO">
+    <meta name="author" content="James Lin 林逸賢">
+    <meta name="robots" content="index, follow">
+    <!-- 建議：在上線時將 href 換成您 GitHub Pages 的實際網址 -->
+    <link rel="canonical" href="https://jameslin-art.github.io/"> 
+
+    <!-- Open Graph (Facebook, LinkedIn, LINE 等社群分享標籤) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="James Lin | UI/UX Designer & Web PM">
+    <meta property="og:description" content="擁有 20 年以上經驗的 UI/UX 設計師與網站專案經理，專注於以人為本的數位體驗。">
+    <meta property="og:url" content="https://jameslin-art.github.io/">
+    <!-- 建議：未來可上傳一張自己的 1200x630 作品預覽圖並替換此連結 -->
+    <meta property="og:image" content="https://placehold.co/1200x630/111111/F4F4F0?text=James+Lin+Portfolio">
+
+    <!-- JSON-LD 結構化資料 (AIO / AI 搜尋引擎最佳化核心) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://jameslin-art.github.io/#person",
+          "name": "James Lin 林逸賢",
+          "jobTitle": ["UI/UX Designer", "Web Project Manager"],
+          "url": "https://jameslin-art.github.io/",
+          "sameAs": [
+            "https://www.linkedin.com/in/jameslin-art/"
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "國立雲林科技大學視覺傳達設計系"
+          },
+          "description": "擁有 20 年實體設計與 15 年以上網站數位經驗的 UI/UX 設計師與網站專案經理。",
+          "knowsAbout": ["UI/UX Design", "Web Project Management", "SEO", "Generative AI", "Figma", "Front-end Development"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://jameslin-art.github.io/#website",
+          "url": "https://jameslin-art.github.io/",
+          "name": "James Lin Portfolio",
+          "publisher": {"@id": "https://jameslin-art.github.io/#person"}
+        }
+      ]
+    }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        /* Strict Swiss Style Typography & Colors */
+        :root {
+            --bg-color: #F4F4F0;
+            --text-main: #111111;
+            --text-muted: #BDBDB8;
+            --accent-red: #E30613;
+        }
+
+        /* Dark Mode CSS Variables Overlay */
+        :root.dark {
+            --bg-color: #111111;
+            --text-main: #F4F4F0;
+            --text-muted: #888888;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            /* Standard Helvetica/Swiss style font stack */
+            font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft JhengHei", sans-serif;
+            overflow-x: hidden; /* Allow deliberate text bleeding */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Remove all rounded corners universally just in case */
+        * {
+            border-radius: 0 !important;
+        }
+
+        /* Massive Bleeding Typography Utility */
+        .bleed-text {
+            font-size: 16vw; /* Viewport width based for massive scaling */
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            white-space: nowrap;
+            margin-left: -0.5vw;
+        }
+
+        @media (min-width: 1024px) {
+            .bleed-text {
+                font-size: 12vw;
+            }
+        }
+
+        /* Selection */
+        ::selection {
+            background-color: var(--accent-red);
+            color: var(--bg-color);
+        }
+        
+        /* Utility for 12-col grid alignments */
+        .grid-12 {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 1rem; /* 16px strict gap */
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="w-full transition-colors duration-300">
+
+    <!-- Top Navigation Area -->
+    <nav aria-label="Main Navigation" class="p-4 md:p-8 grid-12 border-b border-[#111111] dark:border-[#F4F4F0] transition-colors duration-300">
+        <div class="col-span-6 md:col-span-3 font-bold tracking-tight uppercase">
+            <span class="text-[#E30613]">/</span> James Lin - CV
+        </div>
+        <div class="hidden md:block md:col-span-4 transition-colors duration-300">
+            <!-- Spacer to maintain grid structure after removal -->
+        </div>
+        <!-- Contact, Theme & Music Toggles -->
+        <div class="col-span-6 md:col-span-5 text-right font-bold select-none text-xl flex justify-end items-center gap-6 md:gap-8">
+            <!-- Contact Link -->
+            <a href="#contact-form" aria-label="Scroll to Contact Form" class="text-sm md:text-base tracking-widest hover:text-[#E30613] transition-colors pt-1">
+                CONTACT
+            </a>
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" role="switch" aria-checked="false" aria-label="Toggle Dark Mode" class="text-[#E30613] hover:text-[#111111] dark:hover:text-[#F4F4F0] transition-colors cursor-pointer focus:outline-none" onclick="toggleTheme()" title="Toggle Theme">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+            <!-- Music Toggle -->
+            <button id="music-toggle" role="switch" aria-checked="false" aria-label="Toggle Background Music" class="text-[#E30613] hover:text-[#111111] dark:hover:text-[#F4F4F0] transition-colors cursor-pointer focus:outline-none" onclick="toggleMusic()" title="Toggle Music">
+                <i id="music-icon" class="fa-solid fa-volume-xmark"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Background Music Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="https://img.ai365.fans/artworks/dcf4cf56-4bbe-42af-ba5a-14ed4ed39887/4fw3teeis9l.mp3" type="audio/mpeg">
+    </audio>
+
+    <main class="w-full pt-16 md:pt-32 pb-24 space-y-32 md:space-y-48">
+        
+        <!-- ================= HERO SECTION ================= -->
+        <header class="px-4 md:px-8">
+            <h1 class="bleed-text font-bold uppercase text-[#111111] dark:text-[#F4F4F0] transition-colors duration-300">
+                James Lin<span class="text-[#E30613]">.</span><br>
+                UI/UX Porject<br>
+                Manage
+            </h1>
+            
+            <div class="grid-12 mt-12 md:mt-24 items-end">
+                <div class="col-span-12 md:col-span-3 text-[#E30613] font-bold text-xl mb-4 md:mb-0">
+                    20+ YEARS EXP.
+                </div>
+                <div class="col-span-12 md:col-span-9 text-2xl md:text-4xl font-bold leading-tight tracking-tight">
+                    設計以人為本，賞心悅目，讓人看得懂、用得順，和客戶、夥伴一起真正落實專案。
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= INTRO ================= -->
+        <section class="px-4 md:px-8 grid-12">
+            <div class="col-span-12 md:col-span-4 mb-8 md:mb-0 text-[#BDBDB8] dark:text-[#888888] uppercase tracking-widest text-sm font-bold border-t border-[#111111] dark:border-[#F4F4F0] pt-4 transition-colors duration-300">
+                01 / Background
+            </div>
+            <div class="col-span-12 md:col-span-8 text-lg md:text-2xl leading-relaxed md:pr-12 border-t border-[#111111] dark:border-[#F4F4F0] pt-4 transition-colors duration-300">
+                <p class="mb-6">
+                    畢業於國立雲林科技大學視覺傳達設計系，從視覺設計到網站數位領域，先後擔任 UI/UX 設計師與網站專案經理。
+                </p>
+                <p>
+                    職涯前段近十年和行銷部門與企劃夥伴並肩工作，習慣先釐清「設計專案要解決哪些商業與溝通需求」，再動手畫第一條線。曾任亞太電信 Marcom 部門資深設計，負責 POSM 行銷助促物執行與印務品管；之後擔任亞歷山大行銷處設計部副理，協助集團業務、門市營運與總部單位對接設計團隊；其後轉入遠傳安源通訊，負責行銷與合作品牌的設計物料。
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS / INDEX ================= -->
+        <section class="px-4 md:px-8">
+            <h2 class="text-6xl md:text-9xl font-bold uppercase tracking-tighter mb-12 md:mb-24 text-[#111111] dark:text-[#F4F4F0] -ml-1 transition-colors duration-300">
+                Selected<br>Works<span class="text-[#E30613]">.</span>
+            </h2>
+
+            <div class="border-t-[3px] border-[#111111] dark:border-[#F4F4F0] transition-colors duration-300">
+                
+                <!-- List Item 1 -->
+                <div class="grid-12 py-6 md:py-8 border-b border-[#111111] dark:border-[#F4F4F0] hover:bg-[#111111] dark:hover:bg-[#F4F4F0] hover:text-[#F4F4F0] dark:hover:text-[#111111] transition-colors duration-200 group items-baseline px-2 md:px-4 cursor-pointer">
+                    <div class="col-span-2 md:col-span-1 text-sm md:text-lg font-bold text-[#E30613]">01</div>
+                    <div class="col-span-10 md:col-span-5 text-xl md:text-4xl font-bold tracking-tight mb-2 md:mb-0">
+                        會員制官網建置
+                    </div>
+                    <div class="col-span-6 md:col-span-4 text-sm md:text-base text-[#BDBDB8] dark:text-[#888888] uppercase group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        Web System / UX Planning
+                    </div>
+                    <div class="col-span-6 md:col-span-2 text-right text-sm md:text-base font-bold">
+                        2023
+                    </div>
+                    <div class="col-span-12 mt-4 text-sm md:text-base leading-relaxed md:pr-12 md:pl-[8.333%] text-[#BDBDB8] dark:text-[#888888] group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        規劃前後台與會員系統，並運用健康休閒產業的經驗，提醒客戶留意會員系統相關法規，在上線前降低風險。
+                    </div>
+                </div>
+
+                <!-- List Item 2 -->
+                <div class="grid-12 py-6 md:py-8 border-b border-[#111111] dark:border-[#F4F4F0] hover:bg-[#111111] dark:hover:bg-[#F4F4F0] hover:text-[#F4F4F0] dark:hover:text-[#111111] transition-colors duration-200 group items-baseline px-2 md:px-4 cursor-pointer">
+                    <div class="col-span-2 md:col-span-1 text-sm md:text-lg font-bold text-[#E30613]">02</div>
+                    <div class="col-span-10 md:col-span-5 text-xl md:text-4xl font-bold tracking-tight mb-2 md:mb-0">
+                        傳產企業官網
+                    </div>
+                    <div class="col-span-6 md:col-span-4 text-sm md:text-base text-[#BDBDB8] dark:text-[#888888] uppercase group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        Corporate / Custom CMS
+                    </div>
+                    <div class="col-span-6 md:col-span-2 text-right text-sm md:text-base font-bold">
+                        2022
+                    </div>
+                    <div class="col-span-12 mt-4 text-sm md:text-base leading-relaxed md:pr-12 md:pl-[8.333%] text-[#BDBDB8] dark:text-[#888888] group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        與後端工程師合作打造容易操作的客製化後台，並提供基礎 SEO 諮詢；官網架構與功能持續擴展。
+                    </div>
+                </div>
+
+                <!-- List Item 3 -->
+                <div class="grid-12 py-6 md:py-8 border-b border-[#111111] dark:border-[#F4F4F0] hover:bg-[#111111] dark:hover:bg-[#F4F4F0] hover:text-[#F4F4F0] dark:hover:text-[#111111] transition-colors duration-200 group items-baseline px-2 md:px-4 cursor-pointer">
+                    <div class="col-span-2 md:col-span-1 text-sm md:text-lg font-bold text-[#E30613]">03</div>
+                    <div class="col-span-10 md:col-span-5 text-xl md:text-4xl font-bold tracking-tight mb-2 md:mb-0">
+                        大型專案協作
+                    </div>
+                    <div class="col-span-6 md:col-span-4 text-sm md:text-base text-[#BDBDB8] dark:text-[#888888] uppercase group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        Project Management
+                    </div>
+                    <div class="col-span-6 md:col-span-2 text-right text-sm md:text-base font-bold">
+                        2021
+                    </div>
+                    <div class="col-span-12 mt-4 text-sm md:text-base leading-relaxed md:pr-12 md:pl-[8.333%] text-[#BDBDB8] dark:text-[#888888] group-hover:text-[#F4F4F0] dark:group-hover:text-[#111111] transition-colors duration-200">
+                        在資深專案經理帶領下擔任專案助理，並與設計師一起分擔設計工作，確保大型跨部門專案順利推進。
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CAPABILITIES & EXPERTISE ================= -->
+        <section class="px-4 md:px-8 grid-12">
+            <div class="col-span-12 md:col-span-4 mb-8 md:mb-0 text-[#BDBDB8] dark:text-[#888888] uppercase tracking-widest text-sm font-bold border-t border-[#111111] dark:border-[#F4F4F0] pt-4 transition-colors duration-300">
+                02 / Expertise
+            </div>
+            
+            <div class="col-span-12 md:col-span-8 border-t border-[#111111] dark:border-[#F4F4F0] pt-4 grid grid-cols-1 md:grid-cols-2 gap-12 transition-colors duration-300">
+                <!-- Skill Block 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-[#E30613]">網站數位領域 (15+ Yrs)</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        2010 年投入網站數位領域後，從前端切版做起，接著擔任 UI/UX 設計師，之後轉任網站專案經理。
+                    </p>
+                    <ul class="space-y-3 text-[#111111] dark:text-[#F4F4F0] border-l-2 border-[#111111] dark:border-[#F4F4F0] pl-4 transition-colors duration-300">
+                        <li>客戶需求訪談與專案文件撰寫</li>
+                        <li>資訊架構與前後台規劃</li>
+                        <li>主機、系統功能評估與基礎 SEO</li>
+                        <li>前後端技術協調溝通</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Block 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-[#E30613]">設計實務與 AI 導入</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        實際參與線框圖、原型、視覺設計、設計系統與 UX 專家評估法的工作，熟練使用多種線上專案管理工具、Figma、Illustrator 與 Photoshop。
+                    </p>
+                    <ul class="space-y-3 text-[#111111] dark:text-[#F4F4F0] border-l-2 border-[#111111] dark:border-[#F4F4F0] pl-4 transition-colors duration-300">
+                        <li>2022 起自學並導入生成式 AI</li>
+                        <li>AI 輔助研究調查與分析驗證</li>
+                        <li>Vibe coding 原型製作實踐</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EDUCATION & SHARING ================= -->
+        <section class="px-4 md:px-8 grid-12 bg-[#111111] dark:bg-[#F4F4F0] text-[#F4F4F0] dark:text-[#111111] py-16 md:py-24 -mx-4 md:mx-0 w-[100vw] md:w-full relative left-1/2 right-1/2 -ml-[50vw] md:ml-0 md:left-auto md:right-auto px-[calc(50vw-50%)] md:px-8 transition-colors duration-300">
+            <div class="col-span-12 md:col-span-4 mb-8 md:mb-0 text-[#BDBDB8] dark:text-[#888888] uppercase tracking-widest text-sm font-bold border-t border-[#F4F4F0] dark:border-[#111111] md:border-[#111111] md:dark:border-[#F4F4F0] pt-4 md:pt-0 transition-colors duration-300">
+                03 / Education & Sharing
+            </div>
+            
+            <div class="col-span-12 md:col-span-8 md:border-t border-[#F4F4F0] dark:border-[#111111] md:dark:border-[#111111] md:pt-4 transition-colors duration-300">
+                <h3 class="text-3xl md:text-5xl font-bold mb-12 leading-tight tracking-tight">
+                    重視教育與傳承，將 20 年業界經驗帶入校園。
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="border-t border-[#BDBDB8] dark:border-[#888888] pt-4 transition-colors duration-300">
+                        <h4 class="text-xl font-bold mb-2 text-[#E30613]">輔仁大學</h4>
+                        <p class="text-[#BDBDB8] dark:text-[#888888] mb-4">藝術與文化創意學系 / 兼任講師</p>
+                        <p class="leading-relaxed">主授大四「畢業專題」與「創業規劃」，為團隊培訓新世代設計人力。</p>
+                    </div>
+                    <div class="border-t border-[#BDBDB8] dark:border-[#888888] pt-4 transition-colors duration-300">
+                        <h4 class="text-xl font-bold mb-2 text-[#E30613]">中國科技大學</h4>
+                        <p class="text-[#BDBDB8] dark:text-[#888888] mb-4">視覺傳達設計系 / 業界專家</p>
+                        <p class="leading-relaxed">協同教學「Figma 基礎」與「AI 輔助設計」，並運用 AI 語音將講稿製成複習影片。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT FORM ================= -->
+        <section id="contact-form" class="px-4 md:px-8 grid-12 scroll-mt-32">
+            <div class="col-span-12 md:col-span-4 mb-8 md:mb-0 text-[#BDBDB8] dark:text-[#888888] uppercase tracking-widest text-sm font-bold border-t border-[#111111] dark:border-[#F4F4F0] pt-4 transition-colors duration-300">
+                04 / Submit A Request
+            </div>
+            
+            <div class="col-span-12 md:col-span-8 border-t border-[#111111] dark:border-[#F4F4F0] pt-4 transition-colors duration-300">
+                <form id="dataForm" class="grid grid-cols-1 gap-8">
+                    <div>
+                        <label class="block text-xl font-bold uppercase mb-2">Name</label>
+                        <input type="text" name="name" required class="w-full bg-transparent border-b-2 border-[#111111] dark:border-[#F4F4F0] py-4 text-xl font-bold focus:outline-none focus:border-[#E30613] dark:focus:border-[#E30613] transition-colors rounded-none">
+                    </div>
+                    <div>
+                        <label class="block text-xl font-bold uppercase mb-2">Email</label>
+                        <input type="email" name="email" required class="w-full bg-transparent border-b-2 border-[#111111] dark:border-[#F4F4F0] py-4 text-xl font-bold focus:outline-none focus:border-[#E30613] dark:focus:border-[#E30613] transition-colors rounded-none">
+                    </div>
+                    <div>
+                        <label class="block text-xl font-bold uppercase mb-2">Message</label>
+                        <textarea name="message" rows="4" class="w-full bg-transparent border-b-2 border-[#111111] dark:border-[#F4F4F0] py-4 text-xl font-bold focus:outline-none focus:border-[#E30613] dark:focus:border-[#E30613] transition-colors rounded-none"></textarea>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-6 mt-4">
+                        <button type="submit" class="bg-[#111111] dark:bg-[#F4F4F0] text-[#F4F4F0] dark:text-[#111111] text-xl font-bold uppercase px-8 py-4 hover:bg-[#E30613] hover:text-[#F4F4F0] dark:hover:bg-[#E30613] dark:hover:text-[#F4F4F0] transition-colors duration-300 border-[3px] border-transparent hover:border-[#E30613] dark:hover:border-[#E30613]">
+                            SEND <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                        <div id="formStatus" class="text-lg font-bold tracking-tighter uppercase hidden"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ================= FOOTER / CTA ================= -->
+        <footer class="px-4 md:px-8 pb-12">
+            <div class="border-b-[3px] border-[#111111] dark:border-[#F4F4F0] pb-12 md:pb-24 mb-6 transition-colors duration-300">
+                <h2 class="text-4xl md:text-7xl font-bold uppercase tracking-tighter mb-8 md:mb-12 max-w-5xl">
+                    若您尋找理解行銷、AI 的 UI UX 專案管理人，歡迎
+                </h2>
+                
+                <div class="flex flex-wrap gap-4 md:gap-6">
+                    <a href="#contact-form" class="inline-block bg-transparent text-[#111111] dark:text-[#F4F4F0] border-[3px] border-[#111111] dark:border-[#F4F4F0] text-xl md:text-3xl font-bold px-8 py-4 md:px-12 md:py-6 uppercase tracking-wider hover:bg-[#111111] hover:text-[#F4F4F0] dark:hover:bg-[#F4F4F0] dark:hover:text-[#111111] transition-colors duration-300">
+                        CONTACT <i class="fa-solid fa-arrow-up ml-2"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jameslin-art/" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#E30613] text-[#F4F4F0] border-[3px] border-[#E30613] text-xl md:text-3xl font-bold px-8 py-4 md:px-12 md:py-6 uppercase tracking-wider hover:bg-[#111111] hover:border-[#111111] dark:hover:bg-[#F4F4F0] dark:hover:text-[#111111] dark:hover:border-[#F4F4F0] transition-colors duration-300">
+                        VIEW MY LINKEDIN <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="grid-12 text-sm md:text-base font-bold text-[#BDBDB8] dark:text-[#888888] uppercase transition-colors duration-300">
+                <div class="col-span-12 md:col-span-6 mb-2 md:mb-0">
+                    © 2024 James Lin. All rights reserved.
+                </div>
+                <div class="col-span-12 md:col-span-6 text-left md:text-right">
+                    Swiss International Style
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Music toggle logic (Enhanced with Promise handling)
+        let isMusicPlaying = false;
+        function toggleMusic() {
+            const bgMusic = document.getElementById('bg-music');
+            const musicIcon = document.getElementById('music-icon');
+
+            if (isMusicPlaying) {
+                // 執行關閉 / 暫停音樂
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-volume-high');
+                musicIcon.classList.add('fa-volume-xmark');
+                isMusicPlaying = false;
+            } else {
+                // 執行開啟 / 播放音樂
+                bgMusic.play().then(() => {
+                    // 確保音樂確實成功播放後，才切換圖示與狀態
+                    musicIcon.classList.remove('fa-volume-xmark');
+                    musicIcon.classList.add('fa-volume-high');
+                    isMusicPlaying = true;
+                }).catch(error => {
+                    console.error("Audio playback failed:", error);
+                    // 播放失敗（可能因為瀏覽器互動政策），維持關閉狀態
+                    isMusicPlaying = false; 
+                });
+            }
+        }
+
+        // Form submission logic
+        document.getElementById('dataForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
+            formStatus.classList.remove('hidden', 'text-[#E30613]');
+            formStatus.textContent = '';
+            
+            const formData = new FormData(this);
+            // 將 FormData 轉為 URLSearchParams (application/x-www-form-urlencoded 格式)
+            const params = new URLSearchParams(formData).toString();
+            
+            // Google Apps Script 網頁應用程式 URL
+            const gasUrl = 'https://script.google.com/macros/s/AKfycbyOlIuWRCKuHgumu_-aphN6tkr1CrbT5CtaTPO_rzcNBc103KuVWd0tUpAepzp5Bz-x/exec'; 
+            
+            fetch(gasUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: params,
+                mode: 'no-cors' 
+            })
+            .then(() => {
+                formStatus.textContent = 'SUCCESSFULLY SENT.';
+                this.reset(); // 清空表單
+            })
+            .catch(error => {
+                formStatus.textContent = 'CONNECTION ERROR.';
+                formStatus.classList.add('text-[#E30613]');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'SEND <i class="fa-solid fa-arrow-right ml-2"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
