@@ -24,8 +24,7 @@
 * **動態懸停回饋 (Hover Effects)**：作品與按鈕在游標經過時產生高對比反白。
 
 ### 3. 表單與資料串接
-* **客製化聯絡表單**：包含姓名、信箱與留言內容。
-* **Google Sheets 自動寫入**：前端透過 `fetch` 與 `application/x-www-form-urlencoded` 格式傳送，避開 CORS 跨域限制，資料直達 Google Apps Script (GAS) 後端並寫入試算表。
+* **客製化聯絡表單**：包含姓名、信箱與留言內容。。
 * **防呆與狀態提示**：按鈕具備 `SENDING...` 反灰保護與完成提示。
 
 ### 4. 搜尋引擎與 AI 最佳化 (SEO, AIO & AEO)
@@ -38,23 +37,4 @@
 * **前端架構**：HTML5, Tailwind CSS (Dark Mode 擴充), Vanilla CSS 自定義變數 (`:root`)。
 * **圖示庫**：Font Awesome 6.5.2 (`cdnjs`)。
 * **程式邏輯**：原生 JavaScript (ES6+)。
-* **後端與資料庫**：Google Apps Script (GAS) + Google Sheets。
 * **部署與託管**：GitHub Pages。
-
-## 🚀 快速部署指南
-
-1. **複製儲存庫：**
-   ```bash
-   git clone https://github.com/jameslin-art/jameslin-art.github.io.git
-   ```
-
-2. **設定 Google Apps Script (GAS)：**
-   * 將 GAS 指令碼部署為網頁應用程式（執行身分：**我**，誰有權限存取：**任何人**）。
-   * 將 `index.html` 中的 `gasUrl` 替換為您的專屬 `/exec` 終端點網址。
-
-3. **部署至 GitHub Pages：**
-   * 將程式碼推送至 `main` 或 `gh-pages` 分支，並於 Repository Settings 中啟用 GitHub Pages。
-
-## 📄 授權條款
-
-© 2024 James Lin. All rights reserved. 採用 MIT 授權條款釋出。
